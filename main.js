@@ -16,7 +16,7 @@ class Calculator{
     }
     appendNumber(number){ 
         if (number === '.' && this.currentOperand.includes('.')) 
-          return
+            return
             this.currentOperand = this.currentOperand.toString() + number.toString()
         }
         
@@ -75,7 +75,7 @@ class Calculator{
 
 
     updateDisplay(){
-        if (this.currentOperandTextElement.innerText.length >= 18) {
+        if (this.currentOperandTextElement.innerText.length >= 18 && this.operation !== this.delete()) {
             alert('You have entered the maximum digits')
         } else {
             this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
@@ -84,7 +84,7 @@ class Calculator{
                 `${this.previousOperand} ${this.operation}`
             }else{
                 this.previousOperandTextElement.innerText = ''
-            } 
+            }
         }
      
      
